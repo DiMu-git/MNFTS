@@ -1,10 +1,8 @@
 from flask_wtf import Form, FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, IntegerField
-from wtforms.fields import DateField
-from wtforms.validators import DataRequired, URL
-
-
-
+from flask_wtf.file import FileField, FileRequired, FileAllowed
+from wtforms import StringField, TextAreaField, SubmitField, IntegerField, FileField
+from wtforms.fields import DateField, FileField
+from wtforms.validators import DataRequired
 
 
 class EditProfileForm(FlaskForm):
@@ -13,22 +11,13 @@ class EditProfileForm(FlaskForm):
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')
 
-class CommentForm(FlaskForm):
-    body = TextAreaField("What's on your mind?", validators=[DataRequired()])
-    submit = SubmitField('Submit')
 
-class AddForm(FlaskForm):
-    title = StringField('Movie Title')
-    year = IntegerField('Year')
+class UpLoadNFTForm(FlaskForm):
+    name = StringField('NFT Name')
     length = IntegerField('Length')
     description = TextAreaField('Description')
-    url = StringField('URL')
+    file = FileField('Upload File', validators=[FileRequired(), FileAllowed(['jpg', 'jpeg', 'png'
+                                                                             'gif', 'mp3', 'mp4'])])
     submit = SubmitField('Submit')
 
-class EditMovieForm(FlaskForm):
-    title = StringField('Movie Title', validators=[DataRequired()])
-    year = IntegerField('Year', validators=[DataRequired()])
-    length = IntegerField('Length', validators=[DataRequired()])
-    description = TextAreaField('Description', validators=[DataRequired()])
-    url = StringField('URL', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+

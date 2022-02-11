@@ -24,9 +24,15 @@
         </div>
         <!-- user -->
         <div class="user">
+            {% if current_user.is_anonymous %}
             <ul>
-                <li><a href="{{ url_for("auth.login") }}" ><img src="../static/images/user.png" alt=""></a></li>
+                <li><a href="{{ url_for("auth.login") }}" >登陆/注册</a></li>
             </ul>
+                {% else %}
+                <ul>
+                <li><a href="{{ url_for("main.userpage") }}" ><img src="../static/images/user.png" alt=""></a></li>
+            </ul>
+            {% endif %}
         </div>
         <div class="search">
             <input type="text" value="search" placeholder="search">
@@ -35,7 +41,7 @@
         <!-- 导航栏 -->
         <div class="nav">
             <ul>
-              <li><a href="#">市场</a></li>
+              <li><a href="{{ url_for('main.market') }}">市场</a></li>
               <li><a href="#">购物车</a></li>
               <li><a href="#">资产</a></li>
               <li><a href="#">上传</a></li>
