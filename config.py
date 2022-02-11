@@ -25,6 +25,9 @@ class Config:
     CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24
     CELERY_ACCEPT_CONTENT = ["json"]
 
+    UPLOAD_FOLDER = "upload_files"
+    FLASKY_NFTS_PER_PAGE = 10
+
     @staticmethod
     def init_app(app):
         pass

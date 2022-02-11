@@ -8,6 +8,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app
 from datetime import datetime
 
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -70,9 +71,25 @@ class User(UserMixin, db.Model):
             self.admin = True
         else:
             self.admin = False
-        self.follow(self)
 
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+
+# status是数字艺术品的售卖状态
+# True代表售卖中
+class NFT(db.Model):
+    __tablename__ = 'nfts'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True, index=True)
+    status = db.Column(db.Boolean, default=False)
+    filename = db.Column(db.String(64), unique=True)
+    owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    upload_since = db.Column(db.DateTime(), default=datetime.utcnow())
+    price = db.Column(db.Integer(), default=0)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+

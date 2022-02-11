@@ -45,6 +45,8 @@ def login():
     return render_template('auth/login.html', login_form=login_form,
                            signup_form=signup_form)
 
+
+
 @auth.route('/privacy')
 def privacy():
     return render_template("auth/privacy.html")
