@@ -497,9 +497,9 @@ border: 1px solid #eee;
 .menu i{
     transform-origin: left;transition:0.3s;
 }
-.menu.active i:nth-child(1){transform:rotate(33.5deg);width:33px;}
+/* .menu.active i:nth-child(1){transform:rotate(33.5deg);width:33px;}
 .menu.active i:nth-child(2){opacity: 0;}
-.menu.active i:nth-child(3){transform:rotate(-33.5deg);width:33px;}
+.menu.active i:nth-child(3){transform:rotate(-33.5deg);width:33px;} */
     
 .search input {
     width: 300px;
