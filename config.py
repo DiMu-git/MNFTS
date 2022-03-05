@@ -26,7 +26,7 @@ class Config:
     CELERY_ACCEPT_CONTENT = ["json"]
 
     UPLOAD_FOLDER = "upload_files"
-    FLASKY_NFTS_PER_PAGE = 10
+    FLASKY_NFTS_PER_PAGE = 9
 
     @staticmethod
     def init_app(app):

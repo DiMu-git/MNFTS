@@ -1,6 +1,12 @@
+{% extends "base.html" %}
 {% import "_macros.html" as macros %}
-{% import "bootstrap/wtf.html" as wtf %}
-    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
-<div class="pagination">
+
+
+{% block body %}
+<div class="row nft-tabs">
+    {% include '_nfts.html' %}
+</div>
+<div class="pagination p12 row">
     {{ macros.pagination_widget(pagination, '.market') }}
 </div>
+{% endblock %}
