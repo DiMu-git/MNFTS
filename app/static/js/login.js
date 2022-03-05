@@ -25,10 +25,10 @@ $(document).ready(function () {
         // User Name
         if ($(this).hasClass('name')) {
             if ($(this).val().length === 0) {
-                $(this).siblings('span.error').text('Please type your full name').fadeIn().parent('.form-group').addClass('hasError');
+                $(this).siblings('span.error').text('请输入你的全名').fadeIn().parent('.form-group').addClass('hasError');
                 usernameError = true;
             } else if ($(this).val().length > 1 && $(this).val().length <= 6) {
-                $(this).siblings('span.error').text('Please type at least 6 characters').fadeIn().parent('.form-group').addClass('hasError');
+                $(this).siblings('span.error').text('请输入至少6个字符').fadeIn().parent('.form-group').addClass('hasError');
                 usernameError = true;
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
@@ -38,7 +38,7 @@ $(document).ready(function () {
         // Email
         if ($(this).hasClass('email')) {
             if ($(this).val().length == '') {
-                $(this).siblings('span.error').text('Please type your email address').fadeIn().parent('.form-group').addClass('hasError');
+                $(this).siblings('span.error').text('请输入你的邮箱').fadeIn().parent('.form-group').addClass('hasError');
                 emailError = true;
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
@@ -49,7 +49,7 @@ $(document).ready(function () {
         // PassWord
         if ($(this).hasClass('pass')) {
             if ($(this).val().length < 8) {
-                $(this).siblings('span.error').text('Please type at least 8 charcters').fadeIn().parent('.form-group').addClass('hasError');
+                $(this).siblings('span.error').text('请输入至少8个字符').fadeIn().parent('.form-group').addClass('hasError');
                 passwordError = true;
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
         // PassWord confirmation
         if ($('.pass').val() !== $('.passConfirm').val()) {
-            $('.passConfirm').siblings('.error').text('Passwords don\'t match').fadeIn().parent('.form-group').addClass('hasError');
+            $('.passConfirm').siblings('.error').text('密码不匹配').fadeIn().parent('.form-group').addClass('hasError');
             passConfirm = false;
         } else {
             $('.passConfirm').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');

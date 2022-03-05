@@ -50,22 +50,25 @@
     <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style1.css">
     <title>USER</title>
+        <style>
+        .search button {background: url(../static/images/search2.png);}
+    </style>
 </head>
 <body>
     <!-- 头部 -->
     <div class="header w">
         <!-- logo -->
         <div class="logo">
-            <li><a href="{{ url_for('main.index') }}" target="_self"><img src="../static/images/logo.png" alt="" ></a></li>
+            <li><a href="{{ url_for('main.index') }}" target="_self"><img src="../static/images/logo1.png" alt="" ></a></li>
         </div>
         <!-- user -->
         <div class="user">
             <ul>
-                <li><a href="#" target="_self"><img src="../static/images/user.png" alt=""></a></li>
+                <li><a href="#" target="_self"><img src="../static/images/user1.png" alt=""></a></li>
             </ul>
         </div>
         <div class="search">
-            <input type="text" value="search" placeholder="search">
+            <input type="text" value="" placeholder="search">
             <button type="submit"></button>
         </div>
         <!-- 导航栏 -->
@@ -73,7 +76,6 @@
             <ul>
               <li><a href="#">市场</a></li>
               <li><a href="#">购物车</a></li>
-              <li><a href="#">资产</a></li>
               <li><a href="#">上传</a></li>
             </ul>
         </div>
@@ -90,10 +92,10 @@
         </div>
         <main class="user-main">
             <div class="user-main1">
-                <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'><li class="个人信息"><div><div class="user-detail"><img src="../static/images/user-information1.png" alt=""><div class="dscrb">个人信息</div></div></div></li></a>
-                <a href='javascript:void(0)' index='1' class='tab_btn'><li class="我的喜欢"><div class="user-detail"><div><img src="../static/images/user-like1.png" alt=""><div class="dscrb">我的喜欢</div></div></div></li></a>
-                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="私人博物馆"><div class="user-detail"><div><img src="../static/images/user-collect1.png" alt=""><div class="dscrb">私人博物馆</div></div></div></li></a>
-                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="我的钱包"><div class="user-detail"><div><img src="../static/images/user-wallet1.png" alt=""><div class="dscrb">我的钱包</div></div></div></li></a>
+                <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'><li class="个人信息"><div><div class="user-detail"><img src="../static/images/user-information2.png" alt="" class="detail-img"><div class="dscrb">个人信息</div></div></div></li></a>
+                <a href='javascript:void(0)' index='1' class='tab_btn'><li class="我的喜欢"><div class="user-detail"><div><img src="../static/images/user-like2.png" alt="" class="detail-img"><div class="dscrb">我的喜欢</div></div></div></li></a>
+                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="私人博物馆"><div class="user-detail"><div><img src="../static/images/user-collect2.png" alt="" class="detail-img"><div class="dscrb">私人博物馆</div></div></div></li></a>
+                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="我的钱包"><div class="user-detail"><div><img src="../static/images/user-wallet2.png" alt="" class="detail-img"><div class="dscrb">我的钱包</div></div></div></li></a>
             </div>
             <div id='tab'>
                 <div class='tab_div curr_div'>
