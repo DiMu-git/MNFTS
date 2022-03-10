@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="../static/images/3.jpg">
+        </div>
+        <div class="col-md-5 details">
+            <li>
+                <label>作品名称</label>
+                <p>{{nft.name}}</p>
+            </li>
+            <li>
+                <label>作者</label>
+                <p>{{author.name}}</p>
+            </li>
+            <li>
+                <label>价格</label>
+                <p>{{nft.price}}</p>
+            </li>
+            <li>
+                <label>作者信息</label>
+                <p>{{author.about_me}}</p>
+            </li>
+            <li>
+                <label>Token ID</label>
+                <p></p>
+            </li>
+            <li>
+                <label>创作时间</label>
+                <p>{{nft.timestamp}}</p>
+        </div>
+    </div>
+    <div class="row">
+<table class="table table-hover">
+  <caption>交易信息</caption>
+  <thead>
+    <tr>
+      <th>事件</th>
+      <th>价格</th>
+      <th>拥有者</th>
+        <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>买卖</td>
+      <td>¥ 99</td>
+      <td>Di Mu</td>
+        <td>2022-3-01</td>
+    </tr>
+    <tr>
+      <td>买卖</td>
+      <td>¥ 99</td>
+      <td>Zheng Yan</td>
+        <td>2022-3-05</td>
+    </tr>
+    <tr>
+      <td>买卖</td>
+      <td>¥ 99</td>
+      <td>Zijing Ye</td>
+        <td>2022-3-08</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</div>
+{% endblock %}
