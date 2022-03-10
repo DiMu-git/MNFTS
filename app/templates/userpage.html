@@ -76,7 +76,7 @@
             <ul>
               <li><a href="{{ url_for('main.market') }}">市场</a></li>
               <li><a href="#">购物车</a></li>
-              <li><a href="#">上传</a></li>
+              <li><a href="{{ url_for('main.upload') }}">上传</a></li>
             </ul>
         </div>
         <div class="menu">
@@ -100,12 +100,15 @@
             <div id='tab'>
                 <div class='tab_div curr_div'>
                         <div class="user-main2-1">
-                            <h3 class="基本信息">基本信息</h3>
-                            <div class="information" >
-                                <li class="账户昵称" >账户昵称:{{user.username}}</li>
-                                <li class="账户ID" >账户邮箱:{{user.email}}</li>
-                                <li class="手机号" >地点:{{user.location}}</li>
-                                <li class="手机号" >简介:{{user.about_me}}</li>
+                            <h3 class="based-information">基本信息</h3>
+                            <div class="information-all">
+                            <div class="information-text" >
+                                <div class="information-detail" >账户昵称: {{user.username}}</div>
+                                <div class="information-detail" >账户邮箱: {{user.email}}</div>
+                                <div class="information-detail" >地点: {{user.location}}</div>
+                                <div class="information-detail" >简介: {{user.about_me}}</div>
+                            </div>
+                            <div class="information-img"></div>
                             </div>
                         </div>
                 </div>

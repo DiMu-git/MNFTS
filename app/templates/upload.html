@@ -1,11 +1,16 @@
-{% import 'bootstrap/wtf.html' as wtf %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{ wtf.quick_form(form) }}
-</body>
-</html>
+{% extends "base.html" %}
+{% block body %}
+
+<div class="upload-all"><h1>上 传 我 的 作 品</h1></div>
+<div class="uploading">
+    <div class="type"><h2>类 型</h2></div>
+            <main class="type-main">
+            <div class="type-main1">
+                <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'><li class="图片"><div class="type-detail">图片</div></li></a>
+                <a href='javascript:void(0)' index='1' class='tab_btn'><li class="音频"><div class="type-detail">音频</div></li></a>
+                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="视频"><div class="type-detail">视频</div></li></a>
+                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="文档"><div class="type-detail">文档</div></li></a>
+            </div>
+            </main>
+</div>
+{% endblock %}
