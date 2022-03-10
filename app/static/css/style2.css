@@ -387,6 +387,14 @@ label[for='btn3']{
   body{
     background:#edeef0;
   }
+
+     .details label {
+        display: contents;
+    margin-bottom: 0.08rem;
+    font-size: .12rem;
+    line-height: .2rem;
+    color: rgba(0,0,0,.45);
+}
 @media(max-width:1600px){
     .mail-all{
         width: 250px;
