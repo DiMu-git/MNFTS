@@ -58,3 +58,16 @@
     height: 92px;
     transition: 0.2s;
 }
+.tab_div{
+  display: none;
+}
+.curr_div{
+  display: block !important;
+}
+.uploading-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border: 2px solid #033783;
+}

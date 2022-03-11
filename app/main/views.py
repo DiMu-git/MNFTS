@@ -25,8 +25,7 @@ def random_filename(filename) :
 
 @main.route('/userpage', methods=['POST', 'GET'])
 def userpage():
-    nft = NFT.query.filter_by(author_id=current_user.id).first()
-    return render_template("userpage.html", user=current_user, nft=nft)
+    return render_template("userpage.html", user=current_user)
 
 @main.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -47,12 +46,5 @@ def market():
         error_out=False
     )
     nfts = pagination.items
-    return render_template('market.html', nfts=nfts,User=User,
+    return render_template('market.html', nfts=nfts,
                            pagination=pagination)
-
-@main.route('/nftpage/<int:id>', methods=['GET', 'POST'])
-def nftpage(id):
-    nft = NFT.query.filter_by(id=id).first()
-    author=User.query.filter_by(id=nft.author_id).first()
-    return render_template('nftpage.html', nft=nft,author=author,
-                           )
