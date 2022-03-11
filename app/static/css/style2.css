@@ -387,8 +387,7 @@ label[for='btn3']{
   body{
     background:#edeef0;
   }
-
-     .details label {
+       .details label {
         display: contents;
     margin-bottom: 0.08rem;
     font-size: .12rem;
