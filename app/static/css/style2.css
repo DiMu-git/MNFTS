@@ -394,6 +394,14 @@ label[for='btn3']{
     line-height: .2rem;
     color: rgba(0,0,0,.45);
 }
+     .nftpage img {
+        vertical-align: middle;
+    width: inherit;
+    max-width: 500px;
+    display: flex;
+         margin:0 auto;
+    justify-content: center;
+     }
 @media(max-width:1600px){
     .mail-all{
         width: 250px;
@@ -819,6 +827,11 @@ border: 1px solid #eee;
 }
 
 @media (max-width: 1600px) {
+    .nft_details{
+        margin-top: 100px;
+    }
+}
+@media (max-width: 1450px) {
     .nft_details{
         margin-top: 30px;
     }

@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
-
-<div class="upload-all"><h1>上 传 我 的 作 品</h1></div>
+<div class="carpet3">
+<div class="upload-all">上 传 我 的 作 品</div>
+</div>
 <div class="uploading">
     <div class="type"><h2>类 型</h2></div>
             <main class="type-main">
@@ -15,26 +16,63 @@
                 <div class='tab_div curr_div'>
                         <div class="type-main2-1">
                             <div class="uploading-area">
-
+                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
+                                <div class="uploading-area-text">支持jpg、png、gif格式</div>
                             </div>
                         </div>
                 </div>
             <div class='tab_div'>
                 <div class="type-main2-2">
-                    <div class="uploading-area"></div>
+                    <div class="uploading-area">
+                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
+                                <div class="uploading-area-text">支持mp3、wav、flac格式</div>
+                    </div>
                 </div>
             </div>
             <div class='tab_div'>
             <div class="type-main2-3">
-                <div class="uploading-area"></div>
+                <div class="uploading-area">
+                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
+                                <div class="uploading-area-text">支持mp4、mkv、avi格式</div>
+                </div>
             </div>
             </div>
             <div class='tab_div'>
                 <div class="type-main2-4">
-                    <div class="uploading-area"></div>
+                    <div class="uploading-area">
+                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
+                                <div class="uploading-area-text">支持doc、ppt、xlsx格式</div>
+                    </div>
                 </div>
             </div>
             </div>
             </main>
+    <div class="type"><h2>作品信息</h2></div>
+    <div class="info">
+        <div class="info-detail">
+            <div class="text">作品名称: </div>
+<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品名称" class="info-frame">
+        </div>
+        <div class="info-detail">
+            <div class="text">作品简介: </div>
+<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品简介" class="info-frame">
+        </div>
+        <div class="info-detail">
+            <div class="text">作品描述: </div>
+<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品描述" class="info-frame">
+        </div>
+        <div class="info-detail">
+            <div class="text">作者简介: </div>
+<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作者简介" class="info-frame">
+        </div>
+    </div>
+    <div class="price"><h2>作品价格</h2></div>
+    <div class="attention">（注：一旦上链成功将无法修改）</div>
+    <div class="info">
+<div class="info-detail">
+            <div class="text">作品价格: </div>
+<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品价格" class="info-frame">
 </div>
+</div>
+    <div><a href="" class="confirm">提 交</a></div>
 {% endblock %}
