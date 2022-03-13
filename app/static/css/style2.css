@@ -833,13 +833,13 @@ border: 1px solid #eee;
 }
 @media (max-width: 1450px) {
     .nft_details{
-        margin-top: 30px;
+        margin-top: 15px;
     }
 }
 @media (max-width: 1200px) {
     .item-img{
     transition: transform .1s;
-        margin-left: 4px;
+    margin-left: 10px;
     background: #fff;
     box-shadow: 3px 3px 2px 0 hsla(203,6%,45%,.3);
     border-radius: 8px;
@@ -853,7 +853,7 @@ border: 1px solid #eee;
     !important;
 }
     .nft_details{
-        margin-top: 30px;
+        margin-top: 15px;
     }
 }
 @media (max-width: 992px) {
@@ -878,4 +878,15 @@ border: 1px solid #eee;
         margin-left: 60px;
         margin-top: 80px;
 }
+}
+
+@media (max-width: 634px) {
+    .nft_details{
+        margin-left: 30px;
+    }
+}
+@media (max-width: 583px) {
+    .nft_details{
+        margin-top: 20px;
+    }
 }
