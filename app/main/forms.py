@@ -20,7 +20,7 @@ class UpLoadNFTForm(FlaskForm):
     # file = FileField('Upload File', validators=[FileRequired(), FileAllowed(['jpg', 'jpeg', 'png',
     #                                                                          'gif', 'mp3', 'mp4',
     #                                                                          'doc', 'avi', 'pdf'])])
-    file = FileField('Upload File')
+    file = FileField('Upload File', render_kw={'class': 'uploading-file'})
     price = IntegerField('USD')
     submit = SubmitField('提交')
 
