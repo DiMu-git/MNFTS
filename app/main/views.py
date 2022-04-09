@@ -49,10 +49,19 @@ def market():
     return render_template('market.html', nfts=nfts, User=User,
                            pagination=pagination)
 
+@main.route('/shopping_cart', methods=['GET', 'POST'])
+def shopping_cart():
+    page = request.args.get('page', 1, type=int)
+    pagination = NFT.query.order_by(NFT.timestamp.desc()).paginate(
+        page, per_page=current_app.config['FLASKY_NFTS_PER_PAGE'],
+        error_out=False
+    )
+    nfts = pagination.items
+    return render_template('shopping_cart.html', pagination=pagination)
 
 @main.route('/nftpage/<int:id>', methods=['GET', 'POST'])
 def nftpage(id):
     nft = NFT.query.filter_by(id=id).first()
     author=User.query.filter_by(id=nft.author_id).first()
-    return render_template('nftpage.html', nft=nft,author=author,
+    return render_template('nftpage.html', nft=nft, author=author,
                            )

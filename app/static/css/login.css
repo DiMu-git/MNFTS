@@ -62,11 +62,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(156, 191, 238, 1);
+    background: #154599;
     z-index: -1;
   }
   .brand a.logo {
-    color: #033783;
+    color: #99afc6;
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
@@ -141,13 +141,13 @@ body {
     position: relative;
   }
   .form form .form-group.hasError input {
-    border-color: #033783 !important;
+    border-color: #154599 !important;
   }
   .form form .form-group.hasError label {
-    color: #033783 !important;
+    color: #154599 !important;
   }
   .form form div[class=alert] {
-    color: #033783;
+    color: #154599;
   }
   .form form label:not([type=remember_me], [type=agreement]) {
     font-size: 12px;
@@ -161,10 +161,10 @@ body {
   }
 
   .form form label[type=remember_me] {
-    color: #033783;
+    color: #154599;
   }
   .form form label[type=agreement] {
-    color: #033783;
+    color: #154599;
   }
   .form form label.active:not([type=remember_me]) {
     transform: translateY(10px);
@@ -188,10 +188,10 @@ body {
     z-index: 1;
   }
   .form form input:not([type=submit]).hasError {
-    border-color: #033783;
+    border-color: #154599;
   }
   .form form span.error {
-    color: #033783;
+    color: #154599;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     position: absolute;
@@ -200,14 +200,14 @@ body {
     display: none;
   }
   .form form input[type=password] {
-    color: #033783;
+    color: #154599;
   }
 
   .form form .CTA input {
     font-size: 12px;
     text-transform: uppercase;
     padding: 5px 30px;
-    background: #033783;
+    background: #154599;
     color: #fff;
     border-radius: 30px;
     margin-right: 20px;
@@ -223,7 +223,7 @@ body {
     transition: all 0.3s;
   }
   .form form .CTA a.switch:hover {
-    color: #033783;
+    color: #154599;
   }
 
   footer {
@@ -238,7 +238,7 @@ body {
     text-decoration: none !important;
   }
   footer p a:hover, footer p a:focus:hover {
-    color: #033783;
+    color: #154599;
   }
 
   @media (max-width: 760px) {

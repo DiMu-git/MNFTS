@@ -49,6 +49,7 @@
     </script>
     <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style1.css">
     <link rel="stylesheet" href="../static/css/style2.css">
     <link rel="stylesheet" href="../static/css/style3.css">
     <title>REMAKE2</title>
@@ -83,7 +84,7 @@
         <div class="nav">
             <ul>
               <li><a href="{{ url_for('main.market') }}">市场</a></li>
-              <li><a href="#">购物车</a></li>
+              <li><a href="{{ url_for('main.shopping_cart') }}">博物馆</a></li>
               <li><a href="{{ url_for('main.upload') }}">上传</a></li>
             </ul>
         </div>

@@ -75,7 +75,7 @@
         <div class="nav">
             <ul>
               <li><a href="{{ url_for('main.market') }}">市场</a></li>
-              <li><a href="#">购物车</a></li>
+              <li><a href="{{ url_for('main.shopping_cart') }}">博物馆</a></li>
               <li><a href="{{ url_for('main.upload') }}">上传</a></li>
             </ul>
         </div>
@@ -94,8 +94,8 @@
             <div class="user-main1">
                 <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'><li class="个人信息"><div><div class="user-detail"><img src="../static/images/user-information2.png" alt="" class="detail-img"><div class="dscrb">个人信息</div></div></div></li></a>
                 <a href='javascript:void(0)' index='1' class='tab_btn'><li class="我的喜欢"><div class="user-detail"><div><img src="../static/images/user-like2.png" alt="" class="detail-img"><div class="dscrb">我的喜欢</div></div></div></li></a>
-                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="私人博物馆"><div class="user-detail"><div><img src="../static/images/user-collect2.png" alt="" class="detail-img"><div class="dscrb">私人博物馆</div></div></div></li></a>
-                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="我的钱包"><div class="user-detail"><div><img src="../static/images/user-wallet2.png" alt="" class="detail-img"><div class="dscrb">我的钱包</div></div></div></li></a>
+                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="我的钱包"><div class="user-detail"><div><img src="../static/images/user-wallet2.png" alt="" class="detail-img"><div class="dscrb">我的钱包</div></div></div></li></a>
+                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="我的记录"><div class="user-detail"><div><img src="../static/images/record.png" alt="" class="detail-img"><div class="dscrb">我的记录</div></div></div></li></a>
             </div>
             <div id='tab'>
                 <div class='tab_div curr_div'>
@@ -113,24 +113,13 @@
                         </div>
                 </div>
             <div class='tab_div'>
-                <div class="user-main2-2"><h3 class="loved">我的喜欢</h3>
-                </div>
+                <div class="user-main2-1"><h3 class="based-information">我的喜欢</h3></div>
             </div>
             <div class='tab_div'>
-            <div class="user-main2-3">
-                <ul>
-                <li class="全部">全部</li>
-                <li class="出售中">出售中</li>
-                <li class="未出售">未出售</li>
-                </ul>
+            <div class="user-main2-1"><h3 class="based-information">我的钱包</h3>
             </div>
             </div>
-            <div class='tab_div'>
-                <div class="user-main2-4">
-                    绑定钱包
-                    </div>
             </div>
-            </div>
-        </main>     
+        </main>
 </body>
 </html>
