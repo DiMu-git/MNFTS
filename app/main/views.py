@@ -67,7 +67,8 @@ def shopping_cart():
         error_out=False
     )
     nfts = pagination.items
-    return render_template('shopping_cart.html', pagination=pagination)
+    return render_template('shopping_cart.html', nfts=nfts, User=User,
+                           pagination=pagination)
 
 @main.route('/nftpage/<int:id>', methods=['GET', 'POST'])
 def nftpage(id):
