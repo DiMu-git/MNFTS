@@ -14,10 +14,14 @@ class EditProfileForm(FlaskForm):
 
 class UpLoadNFTForm(FlaskForm):
     name = StringField('NFT Name')
-    length = IntegerField('Length')
     description = TextAreaField('Description')
-    file = FileField('Upload File', validators=[FileRequired(), FileAllowed(['jpg', 'jpeg', 'png'
-                                                                             'gif', 'mp3', 'mp4'])])
-    submit = SubmitField('Submit')
+    introduction = TextAreaField("Introduction")
+    author_introduction = TextAreaField("Author_Introduction")
+    # file = FileField('Upload File', validators=[FileRequired(), FileAllowed(['jpg', 'jpeg', 'png',
+    #                                                                          'gif', 'mp3', 'mp4',
+    #                                                                          'doc', 'avi', 'pdf'])])
+    file = FileField('Upload File')
+    price = IntegerField('USD')
+    submit = SubmitField('提交')
 
 

@@ -3,67 +3,40 @@
 <div class="carpet3">
 <div class="upload-all">上 传 我 的 作 品</div>
 </div>
-<div class="uploading">
-    <div class="type"><h2>类 型</h2></div>
+    <form  method="post">
+        {{ form.hidden_tag() }}
+    <div class="type"><h2>文 件</h2></div>
             <main class="type-main">
-            <div class="type-main1">
-                <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'><li class="图片"><div class="type-detail">图片</div></li></a>
-                <a href='javascript:void(0)' index='1' class='tab_btn'><li class="音频"><div class="type-detail">音频</div></li></a>
-                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="视频"><div class="type-detail">视频</div></li></a>
-                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="文档"><div class="type-detail">文档</div></li></a>
-            </div>
                 <div id='tab'>
-                <div class='tab_div curr_div'>
-                        <div class="type-main2-1">
-                            <div class="uploading-area">
-                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
-                                <div class="uploading-area-text">支持jpg、png、gif格式</div>
-                            </div>
-                        </div>
-                </div>
-            <div class='tab_div'>
-                <div class="type-main2-2">
-                    <div class="uploading-area">
-                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
-                                <div class="uploading-area-text">支持mp3、wav、flac格式</div>
-                    </div>
-                </div>
-            </div>
-            <div class='tab_div'>
-            <div class="type-main2-3">
-                <div class="uploading-area">
-                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
-                                <div class="uploading-area-text">支持mp4、mkv、avi格式</div>
-                </div>
-            </div>
-            </div>
-            <div class='tab_div'>
+            <div class='tab_div  curr_div'>
                 <div class="type-main2-4">
                     <div class="uploading-area">
-                                <li><a href=""><img src="../static/images/upload-add.png" alt=""></a></li>
+                                        {{form.file}}
+<!--                        <img src="../static/images/upload-add.png" alt="">-->
                                 <div class="uploading-area-text">支持doc、ppt、xlsx格式</div>
                     </div>
                 </div>
             </div>
             </div>
             </main>
+
     <div class="type"><h2>作品信息</h2></div>
     <div class="info">
         <div class="info-detail">
             <div class="text">作品名称: </div>
-<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品名称" class="info-frame">
+            {{form.name}}
         </div>
         <div class="info-detail">
             <div class="text">作品简介: </div>
-<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品简介" class="info-frame">
+            {{form.description}}
         </div>
         <div class="info-detail">
             <div class="text">作品描述: </div>
-<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品描述" class="info-frame">
+        {{form.introduction}}
         </div>
         <div class="info-detail">
             <div class="text">作者简介: </div>
-<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作者简介" class="info-frame">
+            {{form.author_introduction}}
         </div>
     </div>
     <div class="price"><h2>作品价格</h2></div>
@@ -71,8 +44,9 @@
     <div class="info">
 <div class="info-detail">
             <div class="text">作品价格: </div>
-<input type="text" autocomplete="off" oninput="value=value.replace(/\s+/g,'')" placeholder="请输入作品价格" class="info-frame">
+    {{form.price}}
 </div>
 </div>
-    <div><a href="" class="confirm">提 交</a></div>
+    <div class="form-group"><a href="" class="confirm">{{form.submit}}</a></div>
+        </form>
 {% endblock %}

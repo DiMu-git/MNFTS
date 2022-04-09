@@ -35,16 +35,16 @@ def create_app(config_name):
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
-    login_manager.init_app(app)
-    logger = logging.getLogger('werkzeug')
-    handler = TimedRotatingFileHandler(filename='web.log', when='midnight',
-                                       backupCount=7, encoding='utf-8')
-    handler.suffix = '%Y-%m-%d.log'
-    handler.extMatch = re.compile(r'^\d{4}-\d{2}-\d{2}.og')
-    logging_format = logging.Formatter(
-        '%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s')
-    handler.setFormatter(logging_format)
-    logger.addHandler(handler)
+    # login_manager.init_app(app)
+    # logger = logging.getLogger('werkzeug')
+    # handler = TimedRotatingFileHandler(filename='web.log', when='midnight',
+    #                                    backupCount=7, encoding='utf-8')
+    # handler.suffix = '%Y-%m-%d.log'
+    # handler.extMatch = re.compile(r'^\d{4}-\d{2}-\d{2}.og')
+    # logging_format = logging.Formatter(
+    #     '%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s')
+    # handler.setFormatter(logging_format)
+    # logger.addHandler(handler)
     return app
 
 

@@ -31,9 +31,9 @@ def userpage():
 def upload():
     form = UpLoadNFTForm()
     if form.validate_on_submit():
-        f = form.file.data
-        filename = random_filename(f.filename)
-        f.save(os.path.join("upload_files", filename))
+        # f = form.file.data
+        # filename = random_filename(f.filename)
+        # f.save(os.path.join("upload_files", filename))
         flash('Upload success.')
         return render_template('upload.html', form=form)
     return render_template('upload.html', form=form)
