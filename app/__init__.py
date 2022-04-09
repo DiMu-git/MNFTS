@@ -33,9 +33,11 @@ def create_app(config_name):
     login_manager.init_app(app)
     from .auth import auth as auth_blueprint
     from .main import main as main_blueprint
+    # from .manage import manage as manage_blueprint
     app.register_blueprint(main_blueprint)
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
-    # login_manager.init_app(app)
+    # app.register_blueprint(manage_blueprint, url_prefix='/manage')
+    login_manager.init_app(app)
     # logger = logging.getLogger('werkzeug')
     # handler = TimedRotatingFileHandler(filename='web.log', when='midnight',
     #                                    backupCount=7, encoding='utf-8')

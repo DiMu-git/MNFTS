@@ -6,8 +6,6 @@ from .forms import LoginForm, SignupForm, ChangePasswordForm, PasswordResetForm,
 from app import db
 from ..email import send_email
 
-from . import auth
-
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():

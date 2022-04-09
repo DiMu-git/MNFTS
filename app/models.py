@@ -22,6 +22,9 @@ class User(UserMixin, db.Model):
     about_me = db.Column(db.Text())
     member_since = db.Column(db.DateTime(), default=datetime.utcnow())
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow())
+    records = db.relationship('Record', backref='user', lazy='dynamic')
+    block_address = db.Column(db.String(64), default="")
+
 
     @property
     def password(self):
@@ -88,8 +91,28 @@ class NFT(db.Model):
     filename = db.Column(db.String(64), unique=True)
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    upload_since = db.Column(db.DateTime(), default=datetime.utcnow())
     price = db.Column(db.Integer(), default=0)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    token_id = db.Column(db.String(64), default="")
+
+
+
+
+
+class Record(db.Model):
+    __tablename__ = 'records'
+    id = db.Column(db.Integer, primary_key=True)
+    type = db.Column(db.Integer())
+    status = db.Column(db.Enum(
+        '审核中', '成功', '失败'
+    ), server_default='审核中')
+    filename = db.Column(db.String(64), unique=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    price = db.Column(db.Integer(), default=0)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    name = db.Column(db.String(32))
+    description = db.Column(db.String(64))
+    introduction = db.Column(db.String(64))
+    author_introduction = db.Column(db.String(64))
 
 

@@ -51,18 +51,17 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'data.sqilite')
 
 
-    # def init_app(app):
-    #     Config.init_app(app)
-    #     handler = logging.FileHandler('flask.log', encoding='UTF-8')
-    #     logging_format = logging.Formatter(
-    #         '%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s')
-    #     handler.setFormatter(logging_format)
-    #     app.logger.addHandler(handler)
+    def init_app(app):
+        Config.init_app(app)
+        handler = logging.FileHandler('flask.log', encoding='UTF-8')
+        logging_format = logging.Formatter(
+            '%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s')
+        handler.setFormatter(logging_format)
+        app.logger.addHandler(handler)
 
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
-
     'default': DevelopmentConfig
 }

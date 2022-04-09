@@ -8,7 +8,8 @@ from . import main
 from .forms import EditProfileForm, UpLoadNFTForm
 from flask_login import login_required, current_user
 from .. import db
-from ..models import User, NFT
+from ..models import User, NFT, Record
+from werkzeug.utils import secure_filename
 import os
 
 
@@ -27,13 +28,22 @@ def random_filename(filename) :
 def userpage():
     return render_template("userpage.html", user=current_user)
 
+
 @main.route('/upload', methods=['GET', 'POST'])
+@login_required
 def upload():
     form = UpLoadNFTForm()
     if form.validate_on_submit():
-        # f = form.file.data
-        # filename = random_filename(f.filename)
-        # f.save(os.path.join("upload_files", filename))
+        filename = secure_filename(form.file.data.filename)
+        form.file.data.save(os.path.join("upload_files", filename))
+        record = Record(
+            type=form.tag.data,
+            filename=filename,
+            user_id=current_user.id,
+            price=form.price.data
+        )
+        db.session.add(record)
+        db.session.commit()
         flash('Upload success.')
         return render_template('upload.html', form=form)
     return render_template('upload.html', form=form)
@@ -62,6 +72,6 @@ def shopping_cart():
 @main.route('/nftpage/<int:id>', methods=['GET', 'POST'])
 def nftpage(id):
     nft = NFT.query.filter_by(id=id).first()
-    author=User.query.filter_by(id=nft.author_id).first()
+    author = User.query.filter_by(id=nft.author_id).first()
     return render_template('nftpage.html', nft=nft, author=author,
                            )

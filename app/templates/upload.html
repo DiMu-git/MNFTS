@@ -3,7 +3,7 @@
 <div class="carpet3">
 <div class="upload-all">上 传 我 的 作 品</div>
 </div>
-    <form  method="post">
+    <form  method="post" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
     <div class="type"><h2>文 件</h2></div>
             <main class="type-main">
@@ -37,6 +37,9 @@
         <div class="info-detail">
             <div class="text">作者简介: </div>
             {{form.author_introduction}}
+        </div>
+        <div class="text">作品类型: </div>
+            {{form.tag}}
         </div>
     </div>
     <div class="price"><h2>作品价格</h2></div>
