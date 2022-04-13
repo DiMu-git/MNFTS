@@ -11,7 +11,7 @@
             <div class='tab_div  curr_div'>
                 <div class="type-main2-4">
                     <div class="uploading-area">
-                                        {{form.file}}
+                        <div class="uploading-file-box">{{form.file}}<div class="uploading-img"><img src="../static/images/upload-add.png" alt=""></div></div>
 <!--                        <img src="../static/images/upload-add.png" alt="">-->
                                 <div class="uploading-area-text">支持音频、视频、文档</div>
                     </div>
@@ -38,7 +38,7 @@
             <div class="text">作者简介: </div>
             {{form.author_introduction}}
         </div>
-        <div class="text">作品类型: </div>
+        <div class="type"><h2>作品类型</h2></div>
             {{form.tag}}
         </div>
     </div>

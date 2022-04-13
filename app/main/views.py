@@ -76,3 +76,8 @@ def nftpage(id):
     author = User.query.filter_by(id=nft.author_id).first()
     return render_template('nftpage.html', nft=nft, author=author,
                            )
+
+@main.route('/buy/<int:id>', methods=['GET', 'POST'])
+def buy(id):
+    nft = NFT.query.filter_by(id=id).first()
+    return render_template("Success.html", nft=nft)

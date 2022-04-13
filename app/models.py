@@ -21,7 +21,6 @@ class User(UserMixin, db.Model):
     location = db.Column(db.String(32))
     about_me = db.Column(db.Text())
     member_since = db.Column(db.DateTime(), default=datetime.utcnow())
-    last_seen = db.Column(db.DateTime(), default=datetime.utcnow())
     records = db.relationship('Record', backref='user', lazy='dynamic')
     block_address = db.Column(db.String(64), default="")
 
@@ -81,19 +80,22 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-# status是数字艺术品的售卖状态
-# True代表售卖中
+# status是数字艺术品的上架
+# True代表已上架
+# False代表待审核
 class NFT(db.Model):
     __tablename__ = 'nfts'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True, index=True)
     status = db.Column(db.Boolean, default=False)
-    filename = db.Column(db.String(64), unique=True)
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     price = db.Column(db.Integer(), default=0)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     token_id = db.Column(db.String(64), default="")
+    description = db.Column(db.String(64))
+    introduction = db.Column(db.String(64))
+    author_introduction = db.Column(db.String(64))
 
 
 
