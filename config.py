@@ -27,6 +27,7 @@ class Config:
 
     UPLOAD_FOLDER = "upload_files"
     FLASKY_NFTS_PER_PAGE = 9
+    FLASKY_NFTS_PER_PAGE_PERSONAL = 3
 
     @staticmethod
     def init_app(app):
