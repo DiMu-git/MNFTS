@@ -101,6 +101,7 @@ class NFT(db.Model):
 
 
 
+#type：0代表上传记录， 1代表交易记录
 class Record(db.Model):
     __tablename__ = 'records'
     id = db.Column(db.Integer, primary_key=True)

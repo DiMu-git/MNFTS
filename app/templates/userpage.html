@@ -107,9 +107,8 @@
         <main class="user-main">
             <div class="user-main1">
                 <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'><li class="个人信息"><div><div class="user-detail"><img src="../static/images/user-information2.png" alt="" class="detail-img"><div class="dscrb">个人信息</div></div></div></li></a>
-                <a href='javascript:void(0)' index='1' class='tab_btn'><li class="我的喜欢"><div class="user-detail"><div><img src="../static/images/user-like2.png" alt="" class="detail-img"><div class="dscrb">我的喜欢</div></div></div></li></a>
-                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="我的钱包"><div class="user-detail"><div><img src="../static/images/user-wallet2.png" alt="" class="detail-img"><div class="dscrb">我的钱包</div></div></div></li></a>
-                <a href='javascript:void(0)' index='3' class='tab_btn'><li class="我的记录"><div class="user-detail"><div><img src="../static/images/record.png" alt="" class="detail-img"><div class="dscrb">我的记录</div></div></div></li></a>
+                <a href='javascript:void(0)' index='1' class='tab_btn'><li class="我的钱包"><div class="user-detail"><div><img src="../static/images/user-wallet2.png" alt="" class="detail-img"><div class="dscrb">我的钱包</div></div></div></li></a>
+                <a href='javascript:void(0)' index='2' class='tab_btn'><li class="我的记录"><div class="user-detail"><div><img src="../static/images/record.png" alt="" class="detail-img"><div class="dscrb">我的记录</div></div></div></li></a>
             </div>
             <div id='tab'>
                 <div class='tab_div curr_div'>
@@ -129,21 +128,9 @@
                         </div>
                 </div>
             <div class='tab_div'>
-                <div class="user-main2-1">
-                    <h3 class="based-information">我的喜欢</h3>
-                    <div class="row nft-tabs">
-    {% include '_nfts.html' %}
-</div>
-<div class="pagination row">
-    {{ macros.pagination_widget(pagination, '.userpage') }}
-</div>
-                </div>
-            </div>
-            <div class='tab_div'>
             <div class="user-main2-1"><h3 class="based-information">我的钱包</h3>
             </div>
             </div>
-
             </div>
             <div class='tab_div'>
             <div class="user-main2-1"><h3 class="based-information">我的记录</h3>
@@ -160,8 +147,15 @@
                         {% for record in records %}
         <tr>
             <td>{{record.id}}</td>
-            <td>{{record.type}}</td>
-            <td>{{record.time}}</td>
+
+            <td>
+                {% if record.type == 0 %}
+                上传
+                {% else %}
+                交易
+                {% endif %}
+            </td>
+            <td>{{record.timestamp}}</td>
             <td>{{record.status}}</td>
         </tr>
                         {% endfor %}

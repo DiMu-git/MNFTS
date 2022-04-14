@@ -9,7 +9,6 @@ from .forms import EditProfileForm, UpLoadNFTForm
 from flask_login import login_required, current_user
 from .. import db
 from ..models import User, NFT, Record
-from werkzeug.utils import secure_filename
 import os
 
 
@@ -18,8 +17,8 @@ def index():
     return render_template("index.html")
 
 
-def random_filename(filename) :
-    ext = os.path.splitext(filename) [1]
+def random_filename(filename):
+    ext = os.path.splitext(filename)[1]
     new_filename = uuid.uuid4().hex + ext
     return new_filename
 
@@ -42,19 +41,24 @@ def userpage():
 def upload():
     form = UpLoadNFTForm()
     if form.validate_on_submit():
-        filename = secure_filename(form.file.data.filename)
+        filename = random_filename(form.file.data.filename)
         form.file.data.save(os.path.join("upload_files", filename))
         record = Record(
-            type=form.tag.data,
+            type=0,
             filename=filename,
             user_id=current_user.id,
-            price=form.price.data
+            price=form.price.data,
+            name=form.name.data,
+            description=form.description.data,
+            introduction=form.introduction.data,
+            author_introduction=form.author_introduction.data
         )
         db.session.add(record)
         db.session.commit()
         flash('Upload success.')
-        return render_template('upload.html', form=form)
+        return render_template('Reviewing.html', form=form)
     return render_template('upload.html', form=form)
+
 
 @main.route('/market', methods=['GET', 'POST'])
 def market():
@@ -67,6 +71,7 @@ def market():
     return render_template('market.html', nfts=nfts, User=User,
                            pagination=pagination)
 
+
 @main.route('/shopping_cart', methods=['GET', 'POST'])
 def shopping_cart():
     page = request.args.get('page', 1, type=int)
@@ -78,6 +83,7 @@ def shopping_cart():
     return render_template('shopping_cart.html', nfts=nfts, User=User,
                            pagination=pagination)
 
+
 @main.route('/nftpage/<int:id>', methods=['GET', 'POST'])
 def nftpage(id):
     nft = NFT.query.filter_by(id=id).first()
@@ -85,8 +91,9 @@ def nftpage(id):
     return render_template('nftpage.html', nft=nft, author=author,
                            )
 
+
 @main.route('/buy/<int:id>', methods=['GET', 'POST'])
 def buy(id):
     nft = NFT.query.filter_by(id=id).first()
 
-    return render_template("Success.html", nft=nft)
+    return render_template("Reviewing.html", nft=nft)
